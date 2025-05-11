@@ -5,6 +5,7 @@ import { Facebook, Youtube, Globe, Twitter } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { PageHeader } from "@/components/PageHeader"
 import { PopoverImage } from "@/components/PopoverImage"
+import { RaycastDiscountLink } from "../components/RaycastDiscountLink"
 
 export default function PersonalBrandingPage() {
   return (
@@ -89,16 +90,7 @@ export default function PersonalBrandingPage() {
                 <p className="text-gray-600 dark:text-gray-400 mb-6">
                   (기존 구독자는 기존 결제가 끝나고 새 결제를 시작할 때 적용할 수 있습니다.)
                 </p>
-                <Link
-                  href="https://raycast.com/?via=alfred-about"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full"
-                >
-                  <Button className="w-full bg-[#FF6363] hover:bg-[#FF4F4F] text-white text-lg py-6 cursor-pointer">
-                    Raycast Pro 10% 할인 받기
-                  </Button>
-                </Link>
+                <RaycastDiscountLink />
               </div>
             </div>
           </div>
