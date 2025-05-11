@@ -3,21 +3,13 @@ import Image from "next/image"
 import Link from "next/link"
 import { Facebook, Youtube, Globe, Twitter } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { ThemeToggleButton } from "@/components/ThemeToggleButton"
+import { PageHeader } from "@/components/PageHeader"
 import { PopoverImage } from "@/components/PopoverImage"
 
 export default function PersonalBrandingPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 flex flex-col">
-      {/* 헤더 */}
-      <header className="container mx-auto py-6 px-4">
-        <div className="flex justify-between items-center">
-          <h1 className="text-2xl font-bold">Alfred</h1>
-          <div className="z-50 relative">
-            <ThemeToggleButton />
-          </div>
-        </div>
-      </header>
+      <PageHeader />
 
       {/* 메인 콘텐츠 */}
       <main className="container mx-auto px-4 py-8 flex-grow">
