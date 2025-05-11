@@ -11,7 +11,7 @@ export function PageHeader() {
         <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
           <div className="relative w-8 h-8 rounded-full overflow-hidden">
             <Image
-              src="/a-cup-of-commit.jpg"
+              src="/a-cup-of-commit.png"
               alt="커밋한잔 로고"
               fill
               className="object-cover"
