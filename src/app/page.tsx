@@ -27,7 +27,7 @@ export default function PersonalBrandingPage() {
             </div>
           </div>
           <div className="w-full md:w-2/3 text-center md:text-left">
-            <h2 className="text-4xl font-bold mb-4">안녕하세요, 알프레드입니다</h2>
+            <h2 className="text-3xl font-bold mb-4">안녕하세요, 커피 한잔하며 커밋하는 알프레드입니다.</h2>
             <p className="text-xl text-gray-600 dark:text-gray-400 mb-6">개발자 | 투자자 | 콘텐츠 크리에이터</p>
             <p className="text-gray-700 dark:text-gray-300 mb-6">
               <span>생산성을 높여주는 도구와 문화, 스킬에 관심이 많아요. </span>
