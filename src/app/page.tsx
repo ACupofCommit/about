@@ -3,8 +3,8 @@ import Image from "next/image"
 import Link from "next/link"
 import { Facebook, Youtube, Globe, Twitter } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { ThemeToggleButton } from "@/components/theme-toggle-button"
-import { PopoverImage } from "@/components/popover-image"
+import { ThemeToggleButton } from "@/components/ThemeToggleButton"
+import { PopoverImage } from "@/components/PopoverImage"
 
 export default function PersonalBrandingPage() {
   return (
