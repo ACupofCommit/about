@@ -83,12 +83,17 @@ export default function PersonalBrandingPage() {
               <div className="w-full md:w-2/3">
                 <h3 className="text-2xl font-bold mb-4">Raycast Pro, Teams Pro 10% 할인</h3>
                 <p className="text-gray-700 dark:text-gray-300 mb-4">
-                  <span>Raycast 유료 플랜인 Pro 또는 Teams Pro 구독을 이 링크를 통해 결제하면 첫 결제는 물론 매 반복 결제마다 계속 10% 할인된 가격으로 결제할 수 있어요. 링크로 가서 로그인하고 결제 시 </span>
-                  <PopoverImage src="/raycast-discount-screenshot.png" text="스크린샷" alt="Raycast 10% 할인 적용 스크린샷" />
-                  <span>처럼 10% 할인 적용을 확인하고 결제하세요.</span>
+                  Raycast Pro 또는 Teams Pro와 같은 Raycast 모든 유료 플랜을 10% 할인 가격에 이용하세요.
+                  첫 결제는 물론 매 반복 결제마다 계속 10% 할인된 가격이 적용됩니다.
+                  아래 버튼을 눌러 Raycast로 이동하여 로그인하고 결제하면 됩니다.
+                </p>
+                <p className="text-gray-600 dark:text-gray-400">
+                  <span>- 결제 전 </span>
+                  <PopoverImage src="/raycast-discount-screenshot-1.png" text="스크린샷" alt="Raycast 10% 할인 적용 스크린샷" />
+                  과 같이 10% 할인 적용을 꼭 확인하세요.
                 </p>
                 <p className="text-gray-600 dark:text-gray-400 mb-6">
-                  (기존 구독자는 기존 결제가 끝나고 새 결제를 시작할 때 적용할 수 있습니다.)
+                  - 기존 구독자는 기존 결제가 끝나고 새 결제를 시작할 때 적용할 수 있습니다.
                 </p>
                 <RaycastDiscountLink />
               </div>
