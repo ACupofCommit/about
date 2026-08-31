@@ -1,3 +1,4 @@
+import { Footer } from "@/components/Footer"
 import type React from "react"
 import Image from "next/image"
 import { PageHeader } from "@/components/PageHeader"
@@ -75,11 +76,7 @@ export default function RaycastDiscountPage() {
       </main>
 
       {/* 푸터 */}
-      <footer className="bg-gray-100 dark:bg-gray-900 py-8 mt-auto">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-gray-600 dark:text-gray-400">© 2025 커밋한잔 All rights reserved.</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }
