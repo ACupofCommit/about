@@ -2,7 +2,7 @@ import { Footer } from "@/components/Footer"
 import type React from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Facebook, Youtube, Globe, Twitter } from "lucide-react"
+import { Facebook, Youtube, Globe, Twitter, Flame } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { PageHeader } from "@/components/PageHeader"
 import { PopoverImage } from "@/components/PopoverImage"
@@ -20,8 +20,8 @@ export default function PersonalBrandingPage() {
           <div className="w-full md:w-1/3 flex justify-center">
             <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-gray-100 dark:border-gray-800 shadow-lg">
               <Image
-                src="/avatar.jpg"
-                alt="프로필 사진"
+                src="/a-cup-of-commit-1024.jpg"
+                alt="커밋한잔 로고"
                 fill
                 className="object-cover"
                 priority
@@ -29,11 +29,10 @@ export default function PersonalBrandingPage() {
             </div>
           </div>
           <div className="w-full md:w-2/3 text-center md:text-left">
-            <h2 className="text-3xl font-bold mb-4">안녕하세요, 커피 한잔하며 커밋하는 알프레드입니다.</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400 mb-6">개발자 | 투자자 | 콘텐츠 크리에이터</p>
+            <h2 className="text-3xl font-bold mb-4">커밋한잔은 평생 쓸 반려 앱을 만듭니다</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-400 mb-6">생산성 도구 · 웹 서비스 · 개발 콘텐츠</p>
             <p className="text-gray-700 dark:text-gray-300 mb-6">
-              <span>생산성을 높여주는 도구와 문화, 스킬에 관심이 많아요. </span>
-              <a href="https://www.youtube.com/c/ACupofCommit" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 underline hover:text-blue-800 dark:hover:text-blue-300">커밋한잔</a> 유튜브 채널을 운영하고 있고, 재미있는 서비스도 만들고 있어요.
+              유행 따라 바꾸는 도구가 아니라, 한 번 익히면 오래도록 곁에 두는 앱을 만듭니다. 인생 북마크 시스템 1Bookmark처럼 매일 쓰고, 평생 함께할 수 있는 서비스를 개발하고 있습니다.
             </p>
           </div>
         </section>
@@ -77,7 +76,7 @@ export default function PersonalBrandingPage() {
                     src="/raycast-logo-key.png"
                     alt="Raycast Logo"
                     fill
-                    className="object-contain"
+                    className="object-contain scale-[1.2]"
                   />
                 </div>
               </div>
@@ -132,6 +131,27 @@ export default function PersonalBrandingPage() {
                     시작하기
                   </Button>
                 </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="mt-8">
+          <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 shadow-sm">
+            <div className="flex flex-col md:flex-row items-center gap-8">
+              <div className="w-full md:w-1/3 flex justify-center">
+                <div className="w-48 h-48 rounded-[2.5rem] bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center">
+                  <Flame className="w-24 h-24 text-white" />
+                </div>
+              </div>
+              <div className="w-full md:w-2/3">
+                <h3 className="text-2xl font-bold mb-4">???</h3>
+                <p className="text-gray-700 dark:text-gray-300 mb-4">
+                  AI 동료와 함께하는 복식부기 가계부, 라이프 트래킹 앱
+                </p>
+                <Button disabled className="w-full bg-gray-400 dark:bg-gray-700 text-white text-lg py-6">
+                  Coming soon
+                </Button>
               </div>
             </div>
           </div>
