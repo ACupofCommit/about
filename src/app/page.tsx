@@ -119,7 +119,7 @@ export default function PersonalBrandingPage() {
                 <h3 className="text-2xl font-bold mb-4">1Bookmark - 인생 북마크 시스템</h3>
                 <p className="text-gray-700 dark:text-gray-300 mb-4">
                   당신의 모든 북마크를 한 곳에서 관리하고, 팀 스페이스를 만들어 팀에서 공유하는 북마크도 관리하세요.
-                  고도화된 검색 기능과 Raycast 익스텐션을 통해 원하는 웹 페이지와 슬랙 채널까지 빠르게 열 수 있습니다.
+                  웹, 데스크톱(macOS·Windows·Linux), 모바일(iOS·Android) 어디서든 같은 북마크를 쓰고, 고도화된 검색으로 원하는 웹 페이지와 슬랙 채널까지 빠르게 열 수 있습니다.
                 </p>
                 <Link
                   href="https://1bookmark.net"
