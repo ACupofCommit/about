@@ -15,7 +15,7 @@ const availableVia = [
   'alfred-outsider'
 ]
 
-function RaycastDiscountLinkContent() {
+function RaycastDiscountLinkContent({ label }: { label: string }) {
   const searchParams = useSearchParams()
   const currentPageVia = searchParams.get('via') || ''
   const via = availableVia.includes(currentPageVia) ? currentPageVia : 'alfred-about'
@@ -28,13 +28,13 @@ function RaycastDiscountLinkContent() {
       className="block w-full"
     >
       <Button className="w-full bg-[#FF6363] hover:bg-[#FF4F4F] text-white text-lg py-6 cursor-pointer">
-        Raycast Pro 10% 할인 받기
+        {label}
       </Button>
     </Link>
   )
 }
 
-export function RaycastDiscountLink() {
+export function RaycastDiscountLink({ label }: { label: string }) {
   return (
     <Suspense fallback={
       <Link
@@ -44,11 +44,11 @@ export function RaycastDiscountLink() {
         className="block w-full"
       >
         <Button className="w-full bg-[#FF6363] hover:bg-[#FF4F4F] text-white text-lg py-6 cursor-pointer">
-          Raycast Pro 10% 할인 받기
+          {label}
         </Button>
       </Link>
     }>
-      <RaycastDiscountLinkContent />
+      <RaycastDiscountLinkContent label={label} />
     </Suspense>
   )
 }

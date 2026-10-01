@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Analytics } from '@vercel/analytics/next';
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider"
+import { getDictionary, getLocale } from "@/lib/i18n"
 import "./globals.css";
 
 const geistSans = Geist({
@@ -14,20 +15,25 @@ variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "커밋한잔",
-  icons: {
-    icon: "/a-cup-of-commit.png",
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const { t } = await getDictionary()
+  return {
+    title: t.siteName,
+    icons: {
+      icon: "/a-cup-of-commit.png",
+    },
+  }
+}
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale()
+
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
