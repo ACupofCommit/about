@@ -1,20 +1,77 @@
 import { Footer } from "@/components/Footer"
 import type React from "react"
+import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import { Facebook, Youtube, Globe, Twitter, Flame } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { PageHeader } from "@/components/PageHeader"
 import { PopoverImage } from "@/components/PopoverImage"
-import { RaycastDiscountLink } from "../components/RaycastDiscountLink"
-import { getDictionary } from "@/lib/i18n"
+import { RaycastDiscountLink } from "@/components/RaycastDiscountLink"
+import { alternates, getDictionary, localePath, SITE_URL, type Locale } from "@/lib/i18n"
 
-export default async function PersonalBrandingPage() {
-  const { t } = await getDictionary()
+type Props = { params: Promise<{ locale: Locale }> }
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params
+  const t = getDictionary(locale)
+  return {
+    title: t.meta.homeTitle,
+    description: t.meta.homeDescription,
+    alternates: alternates(locale, "/"),
+    openGraph: {
+      title: t.meta.homeTitle,
+      description: t.meta.homeDescription,
+      url: localePath(locale, "/"),
+      images: ["/a-cup-of-commit-1024.jpg"],
+    },
+  }
+}
+
+function jsonLd(locale: Locale) {
+  const t = getDictionary(locale)
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": `${SITE_URL}/#organization`,
+        name: t.siteName,
+        alternateName: locale === "ko" ? "A Cup of Commit" : "커밋한잔",
+        url: SITE_URL,
+        logo: `${SITE_URL}/a-cup-of-commit-1024.jpg`,
+        email: "help@commit2.app",
+        sameAs: [
+          "https://www.youtube.com/c/ACupofCommit",
+          "https://x.com/b6pzeusbc54tvhw",
+          "https://velog.io/@aluc/posts",
+        ],
+      },
+      {
+        "@type": "SoftwareApplication",
+        name: "1Bookmark",
+        url: "https://1bookmark.net",
+        description: t.oneBookmark.description,
+        applicationCategory: "ProductivityApplication",
+        operatingSystem: "Web, macOS, Windows, Linux, iOS, Android",
+        image: `${SITE_URL}/1bookmark-512x512.png`,
+        publisher: { "@id": `${SITE_URL}/#organization` },
+      },
+    ],
+  }
+}
+
+export default async function PersonalBrandingPage({ params }: Props) {
+  const { locale } = await params
+  const t = getDictionary(locale)
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 flex flex-col">
-      <PageHeader />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd(locale)) }}
+      />
+      <PageHeader locale={locale} />
 
       {/* 메인 콘텐츠 */}
       <main className="container mx-auto px-4 py-8 flex-grow">
@@ -32,7 +89,7 @@ export default async function PersonalBrandingPage() {
             </div>
           </div>
           <div className="w-full md:w-2/3 text-center md:text-left">
-            <h2 className="text-3xl font-bold mb-4">{t.hero.title}</h2>
+            <h1 className="text-3xl font-bold mb-4">{t.hero.title}</h1>
             <p className="text-xl text-gray-600 dark:text-gray-400 mb-6">{t.hero.subtitle}</p>
             <p className="text-gray-700 dark:text-gray-300 mb-6">
               {t.hero.description}
@@ -97,6 +154,12 @@ export default async function PersonalBrandingPage() {
                   {t.raycast.existingSubscribers}
                 </p>
                 <RaycastDiscountLink label={t.raycast.button} />
+                <Link
+                  href={localePath(locale, "/raycast-discount")}
+                  className="mt-3 inline-block text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                >
+                  {t.raycast.detailLink}
+                </Link>
               </div>
             </div>
           </div>
@@ -160,7 +223,7 @@ export default async function PersonalBrandingPage() {
       </main>
 
       {/* 푸터 */}
-      <Footer />
+      <Footer locale={locale} />
     </div>
   )
 }

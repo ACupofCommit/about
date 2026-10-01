@@ -5,6 +5,14 @@ export const LOCALE_COOKIE = "lang"
 const ko = {
   siteName: "커밋한잔",
   logoAlt: "커밋한잔 로고",
+  meta: {
+    homeTitle: "커밋한잔 - 평생 쓸 반려 앱을 만듭니다 | 1Bookmark",
+    homeDescription:
+      "인생 북마크 시스템 1Bookmark를 만드는 커밋한잔입니다. 웹·데스크톱·모바일 어디서나 쓰는 북마크 관리 앱 1Bookmark와 Raycast Pro 10% 할인 링크를 만나보세요.",
+    raycastTitle: "Raycast Pro 10% 할인 (매 결제 적용) | 커밋한잔",
+    raycastDescription:
+      "Raycast Pro, Teams Pro 등 Raycast 모든 유료 플랜을 10% 할인 가격에 이용하세요. 첫 결제뿐 아니라 매 반복 결제마다 할인이 적용되는 Raycast 할인 링크와 적용 화면을 확인할 수 있습니다.",
+  },
   hero: {
     title: "커밋한잔은 평생 쓸 반려 앱을 만듭니다",
     subtitle: "생산성 도구 · 웹 서비스 · 개발 콘텐츠",
@@ -28,6 +36,7 @@ const ko = {
     button: "Raycast Pro 10% 할인 받기",
     proPlan: "Raycast Pro 플랜 결제 시",
     proAiPlan: "Pro + Advanced AI 플랜 결제 시",
+    detailLink: "할인 적용 화면 자세히 보기 →",
   },
   oneBookmark: {
     title: "1Bookmark - 인생 북마크 시스템",
@@ -50,6 +59,14 @@ export type Dictionary = typeof ko
 const en: Dictionary = {
   siteName: "A Cup of Commit",
   logoAlt: "A Cup of Commit logo",
+  meta: {
+    homeTitle: "A Cup of Commit - Companion apps you'll use for life | 1Bookmark",
+    homeDescription:
+      "A Cup of Commit builds 1Bookmark, a lifelong bookmark system for web, desktop, and mobile. Discover 1Bookmark and get 10% off Raycast Pro.",
+    raycastTitle: "Raycast Pro Discount - 10% Off Every Payment | A Cup of Commit",
+    raycastDescription:
+      "Get 10% off Raycast Pro, Teams Pro, and every paid Raycast plan. The Raycast discount applies not only to your first payment but to every renewal. See screenshots to verify the discount.",
+  },
   hero: {
     title: "A Cup of Commit builds companion apps you'll use for life",
     subtitle: "Productivity tools · Web services · Developer content",
@@ -73,6 +90,7 @@ const en: Dictionary = {
     button: "Get 10% off Raycast Pro",
     proPlan: "Checking out Raycast Pro",
     proAiPlan: "Checking out Pro + Advanced AI",
+    detailLink: "See how the discount looks at checkout →",
   },
   oneBookmark: {
     title: "1Bookmark - Your lifelong bookmark system",

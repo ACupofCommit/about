@@ -1,7 +1,7 @@
-import { getDictionary } from "@/lib/i18n"
+import { getDictionary, type Locale } from "@/lib/i18n"
 
-export async function Footer() {
-  const { t } = await getDictionary()
+export function Footer({ locale }: { locale: Locale }) {
+  const t = getDictionary(locale)
 
   return (
     <footer className="bg-gray-100 dark:bg-gray-900 py-8 mt-auto">

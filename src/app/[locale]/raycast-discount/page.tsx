@@ -1,16 +1,36 @@
 import { Footer } from "@/components/Footer"
 import type React from "react"
+import type { Metadata } from "next"
 import Image from "next/image"
 import { PageHeader } from "@/components/PageHeader"
 import { RaycastDiscountLink } from "@/components/RaycastDiscountLink"
-import { getDictionary } from "@/lib/i18n"
+import { alternates, getDictionary, localePath, type Locale } from "@/lib/i18n"
 
-export default async function RaycastDiscountPage() {
-  const { t } = await getDictionary()
+type Props = { params: Promise<{ locale: Locale }> }
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params
+  const t = getDictionary(locale)
+  return {
+    title: t.meta.raycastTitle,
+    description: t.meta.raycastDescription,
+    alternates: alternates(locale, "/raycast-discount"),
+    openGraph: {
+      title: t.meta.raycastTitle,
+      description: t.meta.raycastDescription,
+      url: localePath(locale, "/raycast-discount"),
+      images: ["/raycast-discount-screenshot-1.png"],
+    },
+  }
+}
+
+export default async function RaycastDiscountPage({ params }: Props) {
+  const { locale } = await params
+  const t = getDictionary(locale)
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 flex flex-col">
-      <PageHeader />
+      <PageHeader locale={locale} />
 
       {/* 메인 콘텐츠 */}
       <main className="container mx-auto px-4 py-8 flex-grow">
@@ -28,7 +48,7 @@ export default async function RaycastDiscountPage() {
                 </div>
               </div>
               <div className="w-full md:w-2/3">
-                <h3 className="text-2xl font-bold mb-4">{t.raycast.title}</h3>
+                <h1 className="text-2xl font-bold mb-4">{t.raycast.title}</h1>
                 <p className="text-gray-700 dark:text-gray-300 mb-4">
                   {t.raycast.description}
                 </p>
@@ -77,7 +97,7 @@ export default async function RaycastDiscountPage() {
       </main>
 
       {/* 푸터 */}
-      <Footer />
+      <Footer locale={locale} />
     </div>
   )
 }

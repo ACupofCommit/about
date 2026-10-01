@@ -2,15 +2,15 @@ import Link from "next/link"
 import Image from "next/image"
 import { ThemeToggleButton } from "@/components/ThemeToggleButton"
 import { LanguageToggle } from "@/components/LanguageToggle"
-import { getDictionary } from "@/lib/i18n"
+import { getDictionary, localePath, type Locale } from "@/lib/i18n"
 
-export async function PageHeader() {
-  const { locale, t } = await getDictionary()
+export function PageHeader({ locale }: { locale: Locale }) {
+  const t = getDictionary(locale)
 
   return (
     <header className="container mx-auto py-6 px-4">
       <div className="flex justify-between items-center">
-        <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+        <Link href={localePath(locale, "/")} className="flex items-center gap-3 hover:opacity-80 transition-opacity">
           <div className="relative w-8 h-8 rounded-full overflow-hidden">
             <Image
               src="/a-cup-of-commit.png"
