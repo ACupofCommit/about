@@ -23,8 +23,8 @@ const ko = {
     blog: "블로그",
     x: "X (트위터)",
   },
-  referral: {
-    title: "추천인 링크",
+  affiliate: {
+    title: "제휴 프로그램",
   },
   raycast: {
     title: "Raycast Pro, Teams Pro 10% 할인",
@@ -58,10 +58,11 @@ const ko = {
     button: "플레이리스트 만들기",
   },
   typeless: {
-    title: "Typeless 10% 할인",
+    title: "Typeless - AI 음성 받아쓰기",
     description:
-      "말하듯 편하게 이야기하면 직접 공들여 타이핑한 것 같은 메시지, 이메일, 문서로 다듬어 주는 AI 음성 받아쓰기 앱입니다. 아래 버튼으로 이동해 가입하고 결제하면 10% 할인된 가격으로 이용할 수 있습니다.",
-    button: "Typeless 10% 할인 받기",
+      "말하듯 편하게 이야기하면 직접 공들여 타이핑한 것 같은 메시지, 이메일, 문서로 다듬어 주는 AI 음성 받아쓰기 앱입니다.",
+    disclosure: "- 이 링크로 가입하면 커밋한잔이 소정의 제휴 수수료를 받습니다.",
+    button: "Typeless 시작하기",
   },
   footer: {
     copyright: "© 2026 A Cup of Commit (커밋한잔) All rights reserved.",
@@ -92,8 +93,8 @@ const en: Dictionary = {
     blog: "Blog",
     x: "X (Twitter)",
   },
-  referral: {
-    title: "Referral links",
+  affiliate: {
+    title: "Affiliate programs",
   },
   raycast: {
     title: "10% off Raycast Pro and Teams Pro",
@@ -127,10 +128,11 @@ const en: Dictionary = {
     button: "Make a playlist",
   },
   typeless: {
-    title: "10% off Typeless",
+    title: "Typeless - AI voice dictation",
     description:
-      "An AI voice dictation app: speak naturally, and Typeless turns your words into polished messages, emails, and documents that read like you carefully typed them. Use the button below to sign up and check out at 10% off.",
-    button: "Get 10% off Typeless",
+      "An AI voice dictation app: speak naturally, and Typeless turns your words into polished messages, emails, and documents that read like you carefully typed them.",
+    disclosure: "- A Cup of Commit earns a small affiliate commission if you sign up through this link.",
+    button: "Get started with Typeless",
   },
   footer: {
     copyright: "© 2026 A Cup of Commit. All rights reserved.",

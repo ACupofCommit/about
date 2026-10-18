@@ -224,9 +224,9 @@ export default async function PersonalBrandingPage({ params }: Props) {
           </div>
         </section>
 
-        {/* 추천인 링크 섹션 */}
+        {/* 제휴 프로그램 섹션 */}
         <section className="mt-16 space-y-8">
-          <h2 className="text-2xl font-bold">{t.referral.title}</h2>
+          <h2 className="text-2xl font-bold">{t.affiliate.title}</h2>
           <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 shadow-sm">
             <div className="flex flex-col md:flex-row items-center gap-8">
               <div className="w-full md:w-1/3 flex justify-center">
@@ -277,8 +277,11 @@ export default async function PersonalBrandingPage({ params }: Props) {
               </div>
               <div className="w-full md:w-2/3">
                 <h3 className="text-2xl font-bold mb-4">{t.typeless.title}</h3>
-                <p className="text-gray-700 dark:text-gray-300 mb-6">
+                <p className="text-gray-700 dark:text-gray-300 mb-4">
                   {t.typeless.description}
+                </p>
+                <p className="text-gray-600 dark:text-gray-400 mb-6">
+                  {t.typeless.disclosure}
                 </p>
                 <Link
                   href="https://www.typeless.com/?via=alfred-about"
