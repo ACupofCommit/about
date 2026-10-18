@@ -280,8 +280,11 @@ export default async function PersonalBrandingPage({ params }: Props) {
                 <p className="text-gray-700 dark:text-gray-300 mb-4">
                   {t.typeless.description}
                 </p>
-                <p className="text-gray-600 dark:text-gray-400 mb-6">
+                <p className="text-gray-600 dark:text-gray-400">
                   {t.typeless.disclosure}
+                </p>
+                <p className="text-gray-600 dark:text-gray-400 mb-6">
+                  {t.typeless.coffeeCoupon}
                 </p>
                 <Link
                   href="https://www.typeless.com/?via=alfred-about"
