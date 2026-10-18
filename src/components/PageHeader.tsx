@@ -11,12 +11,12 @@ export function PageHeader({ locale }: { locale: Locale }) {
     <header className="container mx-auto py-6 px-4">
       <div className="flex justify-between items-center">
         <Link href={localePath(locale, "/")} className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-          <div className="relative w-8 h-8">
+          <div className="relative w-8 h-8 rounded-full overflow-hidden">
             <Image
               src="/a-cup-of-commit.png"
               alt={t.logoAlt}
               fill
-              className="object-contain"
+              className="object-cover"
             />
           </div>
           <span className="text-2xl font-bold">{t.siteName}</span>

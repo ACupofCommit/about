@@ -78,12 +78,12 @@ export default async function PersonalBrandingPage({ params }: Props) {
         {/* 히어로 섹션 */}
         <section className="flex flex-col md:flex-row items-center gap-8 mb-16">
           <div className="w-full md:w-1/3 flex justify-center">
-            <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-gray-100 dark:border-gray-800 shadow-lg bg-gray-50 dark:bg-gray-900">
+            <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-gray-100 dark:border-gray-800 shadow-lg">
               <Image
-                src="/a-cup-of-commit-512.png"
+                src="/a-cup-of-commit-1024.jpg"
                 alt={t.logoAlt}
                 fill
-                className="object-contain p-6"
+                className="object-cover"
                 priority
               />
             </div>
