@@ -271,7 +271,7 @@ export default async function PersonalBrandingPage({ params }: Props) {
                     src="/typeless-logo-512.png"
                     alt="Typeless Logo"
                     fill
-                    className="object-contain p-6 dark:invert"
+                    className="object-contain dark:invert"
                   />
                 </div>
               </div>
