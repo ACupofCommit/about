@@ -3,7 +3,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
-import { Facebook, Youtube, Globe, Twitter, Flame } from "lucide-react"
+import { AtSign, Facebook, Flame, Globe, Instagram, Twitter, Youtube } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { PageHeader } from "@/components/PageHeader"
 import { PopoverImage } from "@/components/PopoverImage"
@@ -43,7 +43,9 @@ function jsonLd(locale: Locale) {
         email: "help@commit2.app",
         sameAs: [
           "https://www.youtube.com/c/ACupofCommit",
-          "https://x.com/b6pzeusbc54tvhw",
+          "https://www.threads.com/@acupofcommit",
+          "https://www.instagram.com/acupofcommit/",
+          "https://x.com/acupofcommit",
           "https://velog.io/@aluc/posts",
         ],
       },
@@ -99,13 +101,7 @@ export default async function PersonalBrandingPage({ params }: Props) {
 
         {/* 소셜 미디어 링크 섹션 */}
         <section className="mb-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <SocialLink
-              icon={<Facebook className="h-6 w-6" />}
-              name="Facebook"
-              url="https://www.facebook.com/b6pzeusbc54tvhw5jgpyw8pwz2x6gs"
-              color="bg-blue-600"
-            />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <SocialLink
               icon={<Youtube className="h-6 w-6" />}
               name="YouTube"
@@ -113,21 +109,124 @@ export default async function PersonalBrandingPage({ params }: Props) {
               color="bg-red-600"
             />
             <SocialLink
+              icon={<AtSign className="h-6 w-6" />}
+              name="Threads"
+              url="https://www.threads.com/@acupofcommit"
+              color="bg-black"
+            />
+            <SocialLink
+              icon={<Instagram className="h-6 w-6" />}
+              name="Instagram"
+              url="https://www.instagram.com/acupofcommit/"
+              color="bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600"
+            />
+            <SocialLink
+              icon={<Twitter className="h-6 w-6" />}
+              name={t.social.x}
+              url="https://x.com/acupofcommit"
+              color="bg-black"
+            />
+            <SocialLink
+              icon={<Facebook className="h-6 w-6" />}
+              name="Facebook"
+              url="https://www.facebook.com/b6pzeusbc54tvhw5jgpyw8pwz2x6gs"
+              color="bg-blue-600"
+            />
+            <SocialLink
               icon={<Globe className="h-6 w-6" />}
               name={t.social.blog}
               url="https://velog.io/@aluc/posts"
               color="bg-green-600"
             />
-            <SocialLink
-              icon={<Twitter className="h-6 w-6" />}
-              name={t.social.x}
-              url="https://x.com/b6pzeusbc54tvhw"
-              color="bg-black"
-            />
           </div>
         </section>
 
-        <section>
+        <section className="space-y-8">
+          <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 shadow-sm">
+            <div className="flex flex-col md:flex-row items-center gap-8">
+              <div className="w-full md:w-1/3 flex justify-center">
+                <div className="relative w-48 h-48">
+                  <Image
+                    src="/1bookmark-512x512.png"
+                    alt="1Bookmark Logo"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+              </div>
+              <div className="w-full md:w-2/3">
+                <h3 className="text-2xl font-bold mb-4">{t.oneBookmark.title}</h3>
+                <p className="text-gray-700 dark:text-gray-300 mb-4">
+                  {t.oneBookmark.description}
+                </p>
+                <Link
+                  href="https://1bookmark.net"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full"
+                >
+                  <Button className="w-full bg-purple-600 hover:bg-purple-700 text-white text-lg py-6 cursor-pointer">
+                    {t.oneBookmark.button}
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 shadow-sm">
+            <div className="flex flex-col md:flex-row items-center gap-8">
+              <div className="w-full md:w-1/3 flex justify-center">
+                <div className="w-48 h-48 rounded-[2.5rem] bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center">
+                  <Flame className="w-24 h-24 text-white" />
+                </div>
+              </div>
+              <div className="w-full md:w-2/3">
+                <h3 className="text-2xl font-bold mb-4">???</h3>
+                <p className="text-gray-700 dark:text-gray-300 mb-4">
+                  {t.upcoming.description}
+                </p>
+                <Button disabled className="w-full bg-gray-400 dark:bg-gray-700 text-white text-lg py-6">
+                  {t.upcoming.button}
+                </Button>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 shadow-sm">
+            <div className="flex flex-col md:flex-row items-center gap-8">
+              <div className="w-full md:w-1/3 flex justify-center">
+                <div className="relative w-48 h-48">
+                  <Image
+                    src="/youtube-playlist-maker.svg"
+                    alt="YouTube Playlist Maker Logo"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+              </div>
+              <div className="w-full md:w-2/3">
+                <h3 className="text-2xl font-bold mb-4">{t.playlistMaker.title}</h3>
+                <p className="text-gray-700 dark:text-gray-300 mb-4">
+                  {t.playlistMaker.description}
+                </p>
+                <Link
+                  href="https://youtube-playlist-maker.commit2.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full"
+                >
+                  <Button className="w-full bg-[#FF0033] hover:bg-[#E0002D] text-white text-lg py-6 cursor-pointer">
+                    {t.playlistMaker.button}
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 추천인 링크 섹션 */}
+        <section className="mt-16 space-y-8">
+          <h2 className="text-2xl font-bold">{t.referral.title}</h2>
           <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 shadow-sm">
             <div className="flex flex-col md:flex-row items-center gap-8">
               <div className="w-full md:w-1/3 flex justify-center">
@@ -164,57 +263,33 @@ export default async function PersonalBrandingPage({ params }: Props) {
             </div>
           </div>
 
-        </section>
-
-        <section className="mt-8">
           <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 shadow-sm">
             <div className="flex flex-col md:flex-row items-center gap-8">
               <div className="w-full md:w-1/3 flex justify-center">
                 <div className="relative w-48 h-48">
                   <Image
-                    src="/1bookmark-512x512.png"
-                    alt="1Bookmark Logo"
+                    src="/typeless-logo-512.png"
+                    alt="Typeless Logo"
                     fill
-                    className="object-contain"
+                    className="object-contain p-6 dark:invert"
                   />
                 </div>
               </div>
               <div className="w-full md:w-2/3">
-                <h3 className="text-2xl font-bold mb-4">{t.oneBookmark.title}</h3>
-                <p className="text-gray-700 dark:text-gray-300 mb-4">
-                  {t.oneBookmark.description}
+                <h3 className="text-2xl font-bold mb-4">{t.typeless.title}</h3>
+                <p className="text-gray-700 dark:text-gray-300 mb-6">
+                  {t.typeless.description}
                 </p>
                 <Link
-                  href="https://1bookmark.net"
+                  href="https://www.typeless.com/?via=alfred-about"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full"
                 >
-                  <Button className="w-full bg-purple-600 hover:bg-purple-700 text-white text-lg py-6 cursor-pointer">
-                    {t.oneBookmark.button}
+                  <Button className="w-full bg-gray-900 hover:bg-black dark:bg-white dark:hover:bg-gray-200 text-white dark:text-gray-900 text-lg py-6 cursor-pointer">
+                    {t.typeless.button}
                   </Button>
                 </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="mt-8">
-          <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 shadow-sm">
-            <div className="flex flex-col md:flex-row items-center gap-8">
-              <div className="w-full md:w-1/3 flex justify-center">
-                <div className="w-48 h-48 rounded-[2.5rem] bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center">
-                  <Flame className="w-24 h-24 text-white" />
-                </div>
-              </div>
-              <div className="w-full md:w-2/3">
-                <h3 className="text-2xl font-bold mb-4">???</h3>
-                <p className="text-gray-700 dark:text-gray-300 mb-4">
-                  {t.upcoming.description}
-                </p>
-                <Button disabled className="w-full bg-gray-400 dark:bg-gray-700 text-white text-lg py-6">
-                  {t.upcoming.button}
-                </Button>
               </div>
             </div>
           </div>
