@@ -101,7 +101,7 @@ export default async function PersonalBrandingPage({ params }: Props) {
 
         {/* 소셜 미디어 링크 섹션 */}
         <section className="mb-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="flex justify-center gap-2 sm:gap-4 xl:grid xl:grid-cols-6">
             <SocialLink
               icon={<Youtube className="h-6 w-6" />}
               name="YouTube"
@@ -112,7 +112,7 @@ export default async function PersonalBrandingPage({ params }: Props) {
               icon={<AtSign className="h-6 w-6" />}
               name="Threads"
               url="https://www.threads.com/@acupofcommit"
-              color="bg-black"
+              color="bg-black dark:ring-1 dark:ring-gray-600"
             />
             <SocialLink
               icon={<Instagram className="h-6 w-6" />}
@@ -124,7 +124,7 @@ export default async function PersonalBrandingPage({ params }: Props) {
               icon={<Twitter className="h-6 w-6" />}
               name={t.social.x}
               url="https://x.com/acupofcommit"
-              color="bg-black"
+              color="bg-black dark:ring-1 dark:ring-gray-600"
             />
             <SocialLink
               icon={<Facebook className="h-6 w-6" />}
@@ -315,10 +315,10 @@ interface SocialLinkProps {
 
 function SocialLink({ icon, name, url, color }: SocialLinkProps) {
   return (
-    <Link href={url} target="_blank" rel="noopener noreferrer" className="block">
-      <div className="flex items-center p-4 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow">
-        <div className={`${color} p-3 rounded-full text-white mr-4`}>{icon}</div>
-        <span className="font-medium">{name}</span>
+    <Link href={url} target="_blank" rel="noopener noreferrer" aria-label={name} title={name} className="block">
+      <div className="flex items-center rounded-full hover:opacity-80 transition xl:p-4 xl:rounded-lg xl:bg-white xl:dark:bg-gray-800 xl:border xl:border-gray-200 xl:dark:border-gray-700 xl:hover:opacity-100 xl:hover:shadow-md">
+        <div className={`${color} p-2.5 sm:p-3 rounded-full text-white xl:mr-4`}>{icon}</div>
+        <span className="hidden xl:inline font-medium">{name}</span>
       </div>
     </Link>
   )
