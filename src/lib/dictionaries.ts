@@ -62,7 +62,6 @@ const ko = {
     description:
       "말하듯 편하게 이야기하면 직접 공들여 타이핑한 것 같은 메시지, 이메일, 문서로 다듬어 주는 AI 음성 받아쓰기 앱입니다.",
     disclosure: "- 이 링크로 가입하면 커밋한잔이 제휴 수수료를 받습니다.",
-    coffeeCoupon: "- 결제하고 하단의 이메일로 연락 주시면 소정의 커피 쿠폰을 드립니다.",
     button: "Typeless 시작하기",
   },
   footer: {
@@ -133,7 +132,6 @@ const en: Dictionary = {
     description:
       "An AI voice dictation app: speak naturally, and Typeless turns your words into polished messages, emails, and documents that read like you carefully typed them.",
     disclosure: "- A Cup of Commit earns an affiliate commission if you sign up through this link.",
-    coffeeCoupon: "- After you subscribe, email us at the address below and we'll send you a small coffee coupon.",
     button: "Get started with Typeless",
   },
   footer: {
