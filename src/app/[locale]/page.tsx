@@ -101,7 +101,7 @@ export default async function PersonalBrandingPage({ params }: Props) {
 
         {/* 소셜 미디어 링크 섹션 */}
         <section className="mb-16">
-          <div className="flex justify-center gap-2 sm:gap-4 xl:grid xl:grid-cols-6">
+          <div className="flex justify-center gap-2 sm:gap-4 md:gap-6 lg:grid lg:grid-cols-6 lg:gap-4">
             <SocialLink
               icon={<Youtube className="h-6 w-6" />}
               name="YouTube"
@@ -316,9 +316,9 @@ interface SocialLinkProps {
 function SocialLink({ icon, name, url, color }: SocialLinkProps) {
   return (
     <Link href={url} target="_blank" rel="noopener noreferrer" aria-label={name} title={name} className="block">
-      <div className="flex items-center rounded-full hover:opacity-80 transition xl:p-4 xl:rounded-lg xl:bg-white xl:dark:bg-gray-800 xl:border xl:border-gray-200 xl:dark:border-gray-700 xl:hover:opacity-100 xl:hover:shadow-md">
-        <div className={`${color} p-2.5 sm:p-3 rounded-full text-white xl:mr-4`}>{icon}</div>
-        <span className="hidden xl:inline font-medium">{name}</span>
+      <div className="flex items-center rounded-full hover:opacity-80 transition lg:p-3 xl:p-4 lg:rounded-lg lg:bg-white lg:dark:bg-gray-800 lg:border lg:border-gray-200 lg:dark:border-gray-700 lg:hover:opacity-100 lg:hover:shadow-md">
+        <div className={`${color} p-2.5 sm:p-3.5 md:p-4 lg:p-2 xl:p-3 rounded-full text-white lg:mr-3 xl:mr-4 [&>svg]:sm:h-7 [&>svg]:sm:w-7 [&>svg]:lg:h-6 [&>svg]:lg:w-6`}>{icon}</div>
+        <span className="hidden lg:inline text-sm xl:text-base font-medium whitespace-nowrap">{name}</span>
       </div>
     </Link>
   )
